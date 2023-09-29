@@ -4,14 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-//import 'bootstrap/dist/css/bootstrap.css';
-
+import Login from './components/login';
+import 'bootstrap/dist/css/bootstrap.css';
+import Home from './components/home';
+import Detail from './components/detail';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+       <Routes>
+         <Route path="/" element={<Login />} />
+         <Route path="/home" element={<Home />} />
+         <Route path="/home/:cardId" element={<Detail />} />
+       </Routes>
+  </BrowserRouter>
 );
 
 // If you want your app to work offline and load faster, you can change
