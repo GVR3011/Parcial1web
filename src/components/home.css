@@ -1,0 +1,6 @@
+.title{
+    font-family: 'indie_flower', cursive;
+    font-size: 36px; /* Tamaño de fuente de 36px */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto (ajusta los valores según tus preferencias) */
+}

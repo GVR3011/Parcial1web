@@ -8,16 +8,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Home from './components/home';
 import Detail from './components/detail';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { IntlProvider } from 'react-intl';
+import localeEsMessages from "./components/local/en";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-       <Routes>
-         <Route path="/" element={<Login />} />
-         <Route path="/home" element={<Home />} />
-         <Route path="/home/:cardId" element={<Detail />} />
-       </Routes>
-  </BrowserRouter>
+  <IntlProvider locale="en-EN" messages= {localeEsMessages}>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/home:cardId" element={<Detail />} />
+        </Routes>
+    </BrowserRouter>
+  </IntlProvider>
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -7,7 +7,7 @@ function Detail(){
         <Card className="text-center" style={{ width: "18rem", height: "24rem" }}>
             <Card.Header>{params.nombre}</Card.Header>
             <Card.Body>
-            <Card.Title>{params.fecha}</Card.Title>
+            <Card.Title>{params.fecha_cultivo}</Card.Title>
             <Card.Img
                     style={{ height: "14rem" }}
                     variant="top"

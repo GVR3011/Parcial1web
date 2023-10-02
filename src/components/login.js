@@ -4,9 +4,9 @@ import Form from 'react-bootstrap/Form';
 import { CardBody, Row } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import imagen from './cafebanner.png';
-import Col from "react-bootstrap/Col";
 import { useNavigate } from 'react-router-dom';
-
+import "./login.css"
+import { FormattedMessage } from 'react-intl';
 
 
 function Login() {
@@ -35,7 +35,7 @@ function Login() {
   return (
     <div className = 'contenedor'>
         <div className='Banner'>
-            <h1>El aroma mágico</h1> 
+            <h1 className='title'>El aroma mágico</h1> 
             <hr></hr>
             <Row>
                 <img src={imagen} fluid className="imagen" alt='imagen'></img> 
@@ -47,28 +47,29 @@ function Login() {
                 <div className="col-md-8">
                     <div className="card border-dark">
                 <Card>  
-                    <Card.Header>Iniciar sesión</Card.Header>
+                    <Card.Header><FormattedMessage id="Inicio"/></Card.Header>
                     <CardBody>
                             <div className='col-md-6 offset-md-3 mt-1'>   
                                 <Row>          
                                         <Form>
                                         <Form.Group className="col-md-6 offset-md-3 mt-1" controlId="formBasicEmail" >
-                                            <Form.Label>Nombre de usuario</Form.Label>
+                                            <Form.Label><FormattedMessage id="Usuario"/></Form.Label>
                                             <Form.Control type="email" onChange={handleUserChange} value={formValues.user}/>
                                         </Form.Group>
 
                                         <Form.Group className="col-md-6 offset-md-3 mt-1" controlId="formBasicPassword">
-                                            <Form.Label>Contraseña</Form.Label>
+                                            <Form.Label><FormattedMessage id="Contraseña"/></Form.Label>
                                             <Form.Control type="password" onChange={handlePasswordChange} value={formValues.password}/>
                                             <div className='form-group d-flex justify-content-between mt-3'>
-                                                <Button variant="success" onClick={clickSubmit}>Ingresar</Button>{' '}                                
-                                                <Button variant="danger">Cancelar</Button>{' '}
+                                                <Button variant="success" onClick={clickSubmit}><FormattedMessage id="Boton"/></Button>{' '}                                
+                                                <Button variant="danger"><FormattedMessage id="Cancelar"/></Button>{' '}
                                             </div>
                                         </Form.Group>
                                         </Form>
                                     </Row>
                                 </div>
                     </CardBody>
+                    <Card.Footer className="text-center text-muted mt-3"><FormattedMessage id="Contacto"/></Card.Footer>
                 </Card>
                 </div>
             </div> 
